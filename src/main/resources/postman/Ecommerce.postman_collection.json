@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "cb41cba9-2ed4-4972-a4dd-2a7c6eb57b5d",
 		"name": "Ecommerce",
+		"description": "\\- Create an API to return the wish list of a customer.\n\n\\- Create an API to return the total sale amount of the current day.\n\n\\- Create an API to return the max sale day of a certain time range.\n\n\\- Create an API to return top 5 selling items of all time (based on total sale amount).\n\n\\- Create an API to return top 5 selling items of the last month (based on number of sales).",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "27957949",
 		"_collection_link": "https://gold-spaceship-40900.postman.co/workspace/BoomCheck~cecfbcd7-9879-4770-897d-dcd20dda87f2/collection/27957949-cb41cba9-2ed4-4972-a4dd-2a7c6eb57b5d?action=share&source=collection_link&creator=27957949"
@@ -24,7 +25,53 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "CustomerWishlist",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/wishlist/33",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"wishlist",
+								"33"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 May 2024 18:49:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"productId\": 346,\n        \"productName\": \"Jacket 346\",\n        \"productDescription\": \"Description for Jacket 346\",\n        \"productPrice\": 186.7\n    },\n    {\n        \"productId\": 967,\n        \"productName\": \"Dress 967\",\n        \"productDescription\": \"Description for Dress 967\",\n        \"productPrice\": 809.91\n    },\n    {\n        \"productId\": 612,\n        \"productName\": \"Pants 612\",\n        \"productDescription\": \"Description for Pants 612\",\n        \"productPrice\": 568.38\n    },\n    {\n        \"productId\": 426,\n        \"productName\": \"Jacket 426\",\n        \"productDescription\": \"Description for Jacket 426\",\n        \"productPrice\": 522.14\n    },\n    {\n        \"productId\": 110,\n        \"productName\": \"Sweater 110\",\n        \"productDescription\": \"Description for Sweater 110\",\n        \"productPrice\": 777.39\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "SalesAmountToday",
@@ -43,7 +90,53 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "SalesAmountToday",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/sales/total-amount",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"sales",
+								"total-amount"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 May 2024 18:50:08 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "975.27"
+				}
+			]
 		},
 		{
 			"name": "MaxSalesDayOfDateRange",
@@ -72,7 +165,63 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "MaxSalesDayOfDateRange",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/sales/max-sale-day?startDateTime=2024-05-09T00:00:00&endDateTime=2024-05-31T23:59:59",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"sales",
+								"max-sale-day"
+							],
+							"query": [
+								{
+									"key": "startDateTime",
+									"value": "2024-05-09T00:00:00"
+								},
+								{
+									"key": "endDateTime",
+									"value": "2024-05-31T23:59:59"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 May 2024 18:50:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "\"2024-05-10\""
+				}
+			]
 		},
 		{
 			"name": "Top5BySaleAmount",
@@ -91,7 +240,53 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Top5BySaleAmount",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/top-selling-items/top5-by-sale-amount",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"top-selling-items",
+								"top5-by-sale-amount"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 May 2024 18:50:22 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"productId\": 946,\n        \"productName\": \"Jacket 946\",\n        \"totalSold\": 24198.52\n    },\n    {\n        \"productId\": 881,\n        \"productName\": \"Shirt 881\",\n        \"totalSold\": 23614.62\n    },\n    {\n        \"productId\": 551,\n        \"productName\": \"Shirt 551\",\n        \"totalSold\": 20863.79\n    },\n    {\n        \"productId\": 521,\n        \"productName\": \"Shirt 521\",\n        \"totalSold\": 19992.03\n    },\n    {\n        \"productId\": 31,\n        \"productName\": \"Shirt 31\",\n        \"totalSold\": 19236.06\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "Top5ByNumberOfSaleLastMonth",
@@ -110,7 +305,53 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Top5ByNumberOfSaleLastMonth",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/top-selling-items/top5-by-number-of-sale-last-month",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"top-selling-items",
+								"top5-by-number-of-sale-last-month"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 May 2024 18:50:26 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"productId\": 162,\n        \"productName\": \"Pants 162\",\n        \"totalSold\": 14\n    },\n    {\n        \"productId\": 11,\n        \"productName\": \"Shirt 11\",\n        \"totalSold\": 11\n    },\n    {\n        \"productId\": 426,\n        \"productName\": \"Jacket 426\",\n        \"totalSold\": 10\n    },\n    {\n        \"productId\": 871,\n        \"productName\": \"Shirt 871\",\n        \"totalSold\": 10\n    },\n    {\n        \"productId\": 41,\n        \"productName\": \"Shirt 41\",\n        \"totalSold\": 10\n    }\n]"
+				}
+			]
 		}
 	]
 }

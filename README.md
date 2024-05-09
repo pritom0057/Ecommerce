@@ -1,5 +1,6 @@
 # Ecommerce
 An Ecommerce backend using Java spring boot and Postgres as database. The development was done using TDD approach. 
+Added some random data for testing convenience using liquibase  
 
 ### API that was exposed
 - Create an API to return the wish list of a customer.
@@ -26,4 +27,4 @@ An Ecommerce backend using Java spring boot and Postgres as database. The develo
 
 ### Improvement Area
 - Introduce Java Spring boot security to restrict the API
-- Implement Java documentation  
+- Implement Java documentation

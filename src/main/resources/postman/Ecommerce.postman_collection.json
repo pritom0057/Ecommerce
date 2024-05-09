@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "cb41cba9-2ed4-4972-a4dd-2a7c6eb57b5d",
+		"name": "Ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27957949",
+		"_collection_link": "https://gold-spaceship-40900.postman.co/workspace/BoomCheck~cecfbcd7-9879-4770-897d-dcd20dda87f2/collection/27957949-cb41cba9-2ed4-4972-a4dd-2a7c6eb57b5d?action=share&source=collection_link&creator=27957949"
+	},
+	"item": [
+		{
+			"name": "CustomerWishlist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/wishlist/33",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"wishlist",
+						"33"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SalesAmountToday",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/sales/total-amount",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"sales",
+						"total-amount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MaxSalesDayOfDateRange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/sales/max-sale-day?startDateTime=2024-05-09T00:00:00&endDateTime=2024-05-31T23:59:59",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"sales",
+						"max-sale-day"
+					],
+					"query": [
+						{
+							"key": "startDateTime",
+							"value": "2024-05-09T00:00:00"
+						},
+						{
+							"key": "endDateTime",
+							"value": "2024-05-31T23:59:59"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top5BySaleAmount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/top-selling-items/top5-by-sale-amount",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"top-selling-items",
+						"top5-by-sale-amount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top5ByNumberOfSaleLastMonth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/top-selling-items/top5-by-number-of-sale-last-month",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"top-selling-items",
+						"top5-by-number-of-sale-last-month"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

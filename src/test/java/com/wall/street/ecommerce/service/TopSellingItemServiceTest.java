@@ -19,7 +19,6 @@ public class TopSellingItemServiceTest {
     @MockBean
     private OrderRepository orderRepository;
 
-
     @Test
     public void testGetTop5SellingItems_Success() {
         // Mocked data

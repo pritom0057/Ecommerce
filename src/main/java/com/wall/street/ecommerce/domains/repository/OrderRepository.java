@@ -26,11 +26,11 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
             nativeQuery = true)
     LocalDate findMaxSaleDay(@Param("startDateTime") LocalDateTime startDateTime, @Param("endDateTime") LocalDateTime endDateTime);
 
-    @Query(value = "SELECT oi.product_id, p.name, SUM(oi.quantity) as totalSold "
+    @Query(value = "SELECT oi.product_id, p.name, SUM(oi.total_price) as totalSold "
                    + "FROM  \"order_item\" oi "
                    + "JOIN  \"product\" p ON oi.product_id = p.id "
                    + "GROUP BY oi.product_id, p.name "
-                   + "ORDER BY SUM(oi.quantity) DESC "
+                   + "ORDER BY SUM(oi.total_price) DESC "
                    + "LIMIT 5", nativeQuery = true)
     List<Object[]> findTop5SellingItems();
 

@@ -98,7 +98,7 @@ public class TopSellingItemControllerTest {
         when(topSellingItemService.getTop5SellingItemsLastMonth()).thenReturn(topSellingItems);
 
         // Perform GET request to the endpoint
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/top-selling-items/top5-by-sale-amount-last-month")
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/top-selling-items/top5-by-number-of-sale-last-month")
                                               .contentType(MediaType.APPLICATION_JSON))
                .andExpect(status().isOk())
                .andExpect(MockMvcResultMatchers.jsonPath("$[0].productName").value("Product 1"))

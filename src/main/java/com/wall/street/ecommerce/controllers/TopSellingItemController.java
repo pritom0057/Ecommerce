@@ -32,7 +32,7 @@ public class TopSellingItemController {
         }
     }
 
-    @GetMapping("/top5-by-sale-amount-last-month")
+    @GetMapping("/top5-by-number-of-sale-last-month")
     public ResponseEntity<List<TopSellingItemDTO>> getTop5SellingItemsLastMonth() {
         try {
             var topSellingItems = topSellingItemService.getTop5SellingItemsLastMonth();
